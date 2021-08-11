@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)" >
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Producto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input formControlName="title" matInput type="text" placeholder="Title"/>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input formControlName="price" matInput type="number" placeholder="Price" />
+                    </mat-form-field>
+                    <div *ngIf="this.form.get('price')!.errors && form.get('price')!.dirty">
+                        <mat-error *ngIf="this.form.get('price')!.hasError('required')">* Este campo es requerido</mat-error>
+                        <mat-error *ngIf="this.form.get('price')!.hasError('price_invalid')">* No debes de pasarte de 10000</mat-error>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <textarea formControlName="description" matInput type="number" placeholder="Description" ></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit" [disabled]="!form.valid" >Guardar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
+
+<pre>
+    {{ form.valid }}
+</pre>

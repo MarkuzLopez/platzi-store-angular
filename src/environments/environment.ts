@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'http://platzi-store.herokuapp.com/',
+  firebase: { 
+    apiKey: 'AIzaSyBBBMCu-HzfVRKue7znM3PQovgxxRU-FIA',
+    authDomain: 'platzi-store-7768d.firebaseapp.com',
+    projectId: 'platzi-store-7768d',
+    storageBucket: 'platzi-store-7768d.appspot.com',
+    messagingSenderId: '668740407524',
+    appId: '1:668740407524:web:df1710cbafd0fd62c61cf1',
+    measurementId: 'G-2ZLF0XHL6B'
+  }
 };
 
 /*
